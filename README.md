@@ -25,8 +25,8 @@ Then open http://localhost:8000 in a modern browser.
 ## 3D experience
 
 - Built with Three.js **0.187.0** and the matching `OrbitControls` addon, pinned to the same jsDelivr CDN release.
-- Four interactive scenes: the overall precinct, the High Gate, the column hall, and a symbolic raised-relief study.
-- Drag to orbit, scroll or pinch to zoom, pan to reposition, and click scene objects to read their notes.
+- Six interactive scenes: the overall precinct, the High Gate, the column hall, the royal palace and appearance window, the Small Temple of Amun, and a symbolic raised-relief study.
+- Drag to orbit, scroll or pinch to zoom, pan to reposition, and click scene objects to read their notes. The palace scene includes a schematic audience hall, throne zone, private rooms, and appearance balcony; the Small Temple scene visualizes a columned court, peristyle hall, six chapels, and sanctuary.
 - Optional auto-rotation, reset view, and fullscreen mode.
 - Arabic and English interface, plus browser speech synthesis for the selected 3D object's explanation.
 - The models are interpretive educational massing studies, not surveyed drawings, measured reconstructions, or definitive reconstructions of lost architecture.

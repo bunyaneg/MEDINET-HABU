@@ -407,7 +407,7 @@
   document.documentElement.lang=next;
   document.documentElement.dir=next==='ar'?'rtl':'ltr';
   document.querySelectorAll('[data-ar][data-en]').forEach(function(el){
-   el.textContent=el.getAttribute('data-'+next);
+   el.innerHTML=el.getAttribute('data-'+next);
   });
   langButton.textContent=next==='ar'?'EN':'عربي';
   if(window.setHabu3DLanguage)window.setHabu3DLanguage();

@@ -504,11 +504,14 @@ if (mount) {
           resetCamera([24, 17, 29], [0, 1.5, 0]);
           stageLabel.textContent = say('معبد آمون الصغير · نموذج تخطيطي', 'Small Temple of Amun · schematic model');
           activate('smallTemple');
-        } else {
+        } else if (name === 'relief') {
           buildRelief();
           resetCamera([19, 12, 22], [0, 3.6, -1]);
           stageLabel.textContent = say('سطح نقش بارز · تصور رمزي', 'Raised relief surface · symbolic study');
           activate('relief');
+        } else {
+          setScene('complex');
+          return;
         }
         document.querySelectorAll('[data-scene]').forEach(btn => btn.classList.toggle('active', btn.dataset.scene === name));
       }

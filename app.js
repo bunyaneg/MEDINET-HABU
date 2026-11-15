@@ -100,6 +100,10 @@ if (mount) {
           ar: ['القصر الملكي', 'توجد بقايا القصر جنوب المعبد. ويصف المسح المعماري مراحل قصريّة متعاقبة، وقاعات استقبال وعرش وأجنحة خاصة. ترتبط نافذة الظهور بالفناء الأول وتكشف عن تداخل المجال الملكي مع الفضاء الشعائري.'],
           en: ['Royal Palace', 'Palace remains lie south of the temple. The architectural survey describes successive palace phases with audience and throne halls and private suites. The appearance window connected the palace to the First Court, joining royal and ritual space.']
         },
+        appearance: {
+          ar: ['نافذة الظهور الملكي', 'نافذة أو شرفة عالية ربطت القصر الملكي بالفناء الأول. مثّلت موضعًا يظهر منه الملك في المناسبات الرسمية ويراقب المواكب وتقديم الأسرى والغنائم ومكافأة الموالين.'],
+          en: ['Royal Appearance Window', 'An elevated window or balcony connected the palace with the First Court. It provided a setting for royal appearances, viewing processions and captives, and rewarding loyal followers.']
+        },
         magazines: {
           ar: ['المخازن وورش الخدمة', 'تُظهر نتائج الحفائر أن المجمع يضم وحدات تخزين وورشًا ومباني إدارية وخدمية. هذه المنشآت أساسية لفهم المعبد كمؤسسة اقتصادية وإدارية، لا كمكان للطقس وحده.'],
           en: ['Magazines and Service Workshops', 'Excavation records show storerooms, workshops, and administrative and service buildings. These structures are essential to understanding the temple as an economic and administrative institution, not only a place of ritual.']
@@ -357,6 +361,92 @@ if (mount) {
         world.add(g);
       }
 
+
+      function buildPalace() {
+        const g = new THREE.Group();
+        plinth(g, 29, 23);
+        const floor = new THREE.Mesh(new THREE.PlaneGeometry(29, 23), makeMat(0x8d7857, 1));
+        floor.rotation.x = -Math.PI / 2; floor.position.y = 0.08; g.add(floor);
+
+        // Schematic outline of the palace precinct and courtyards.
+        box(g, 'Palace north enclosure', 0, 1.15, -10.0, 25, 2.3, 0.7, mats.mudbrick, 'palace');
+        box(g, 'Palace west enclosure', -12.2, 1.15, 0, 0.7, 2.3, 20, mats.mudbrick, 'palace');
+        box(g, 'Palace east enclosure', 12.2, 1.15, 0, 0.7, 2.3, 20, mats.mudbrick, 'palace');
+        box(g, 'Palace south enclosure left', -8.5, 1.15, 10.0, 8.0, 2.3, 0.7, mats.mudbrick, 'palace');
+        box(g, 'Palace south enclosure right', 8.5, 1.15, 10.0, 8.0, 2.3, 0.7, mats.mudbrick, 'palace');
+
+        // Open courtyard and 12-column audience hall.
+        box(g, 'Audience hall rear wall', 0, 2.0, -5.7, 17, 4.0, 0.7, mats.sandstoneDark, 'palace');
+        box(g, 'Audience hall side wall west', -8.2, 1.8, -1.4, 0.7, 3.6, 9.0, mats.sandstone, 'palace');
+        box(g, 'Audience hall side wall east', 8.2, 1.8, -1.4, 0.7, 3.6, 9.0, mats.sandstone, 'palace');
+        for (let x of [-6.0, -2.0, 2.0, 6.0]) {
+          for (let z of [-3.0, 1.0, 5.0]) column(g, x, z, 'papyrus', 'palace');
+        }
+
+        // Throne-room zone with four columns and raised dais.
+        box(g, 'Throne room platform', 0, 0.35, -8.0, 8.0, 0.45, 3.2, mats.sandstoneDark, 'palace');
+        for (let x of [-2.0, 2.0]) {
+          for (let z of [-8.8, -6.8]) column(g, x, z, 'papyrus', 'palace');
+        }
+        box(g, 'Royal dais', 0, 0.8, -8.1, 2.4, 0.65, 1.4, mats.gold, 'palace');
+        box(g, 'Throne back', 0, 1.75, -8.8, 1.65, 1.5, 0.25, mats.sandstoneLight, 'palace');
+
+        // Private rooms and service wing.
+        for (let x of [-9.3, 9.3]) {
+          for (let z of [-5.0, -1.5, 2.0, 5.5]) {
+            box(g, 'Private palace chamber', x, 1.35, z, 4.6, 2.7, 2.7, mats.mudbrick, 'palace');
+            box(g, 'Chamber roof coping', x, 2.76, z, 4.8, 0.18, 2.9, mats.sandstoneDark, 'palace');
+          }
+        }
+
+        // Appearance balcony facing the symbolic First Court.
+        box(g, 'Appearance window balcony', 0, 4.25, 10.0, 5.5, 0.55, 1.5, mats.gold, 'appearance');
+        box(g, 'Appearance window lintel', 0, 5.15, 9.5, 4.8, 0.32, 0.45, mats.sandstoneLight, 'appearance');
+        box(g, 'Appearance window left pier', -2.0, 4.65, 9.5, 0.35, 1.1, 0.55, mats.sandstoneLight, 'appearance');
+        box(g, 'Appearance window right pier', 2.0, 4.65, 9.5, 0.35, 1.1, 0.55, mats.sandstoneLight, 'appearance');
+        labelObject(g, 'Appearance focus marker', 0, 5.8, 9.6, 'appearance');
+
+        world.add(g);
+      }
+
+      function buildSmallTemple() {
+        const g = new THREE.Group();
+        plinth(g, 26, 23);
+        const floor = new THREE.Mesh(new THREE.PlaneGeometry(26, 23), makeMat(0x96805d, 1));
+        floor.rotation.x = -Math.PI / 2; floor.position.y = 0.08; g.add(floor);
+
+        // A smaller, older temple layout: entrance, court, peristyle, six chapels.
+        box(g, 'Small temple pylon west tower', -4.1, 2.4, 8.1, 3.4, 4.8, 1.5, mats.sandstoneDark, 'smallTemple');
+        box(g, 'Small temple pylon east tower', 4.1, 2.4, 8.1, 3.4, 4.8, 1.5, mats.sandstoneDark, 'smallTemple');
+        box(g, 'Small temple gate lintel', 0, 4.9, 8.1, 4.4, 0.4, 1.65, mats.gold, 'smallTemple');
+
+        // Columned court.
+        for (let x of [-5.0, -2.5, 2.5, 5.0]) {
+          column(g, x, 4.8, 'papyrus', 'column');
+          column(g, x, 1.5, 'papyrus', 'column');
+        }
+        box(g, 'Small temple court north wall', 0, 1.9, -0.4, 12.8, 3.8, 0.55, mats.sandstone, 'smallTemple');
+
+        // Peristyle hall.
+        for (let x of [-4.2, -1.4, 1.4, 4.2]) {
+          for (let z of [-3.0, -6.2]) column(g, x, z, 'papyrus', 'column');
+        }
+        box(g, 'Peristyle side wall west', -6.2, 1.7, -4.5, 0.55, 3.4, 5.0, mats.sandstoneDark, 'smallTemple');
+        box(g, 'Peristyle side wall east', 6.2, 1.7, -4.5, 0.55, 3.4, 5.0, mats.sandstoneDark, 'smallTemple');
+
+        // Six chapel cells in two rows, ending in a central sanctuary.
+        for (let x of [-4.2, 0, 4.2]) {
+          for (let z of [-8.2, -10.3]) {
+            box(g, 'Inner chapel', x, 1.5, z, 3.8, 3.0, 1.8, mats.sandstone, 'smallTemple');
+            box(g, 'Chapel roof border', x, 3.05, z, 3.95, 0.18, 1.95, mats.gold, 'smallTemple');
+          }
+        }
+        box(g, 'Main sanctuary chamber', 0, 2.1, -11.2, 3.8, 4.2, 1.2, mats.sandstoneLight, 'sanctuary');
+        box(g, 'Sanctuary naos', 0, 1.5, -10.45, 1.35, 2.8, 0.75, mats.gold, 'sanctuary');
+        labelObject(g, 'Amun sanctuary marker', 0, 4.5, -11.2, 'smallTemple');
+        world.add(g);
+      }
+
       function cleanWorld() {
         while (world.children.length) {
           const child = world.children[world.children.length - 1];
@@ -404,6 +494,16 @@ if (mount) {
           resetCamera([22, 16, 25], [0, 1.8, 0]);
           stageLabel.textContent = say('قاعة الأعمدة · ترتيب نباتي وأوزيري', 'Column hall · papyrus and Osiride forms');
           activate('hypostyle');
+        } else if (name === 'palace') {
+          buildPalace();
+          resetCamera([24, 17, 29], [0, 1.4, 0]);
+          stageLabel.textContent = say('القصر الملكي · قاعات ونافذة الظهور', 'Royal palace · halls and appearance window');
+          activate('palace');
+        } else if (name === 'small-temple') {
+          buildSmallTemple();
+          resetCamera([24, 17, 29], [0, 1.5, 0]);
+          stageLabel.textContent = say('معبد آمون الصغير · نموذج تخطيطي', 'Small Temple of Amun · schematic model');
+          activate('smallTemple');
         } else {
           buildRelief();
           resetCamera([19, 12, 22], [0, 3.6, -1]);

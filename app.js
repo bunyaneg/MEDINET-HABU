@@ -226,8 +226,8 @@ if (mount) {
         box(g, 'North enclosure wall', 0, 1.7, -15, 37, 3.4, 1.15, mats.mudbrick, 'wall');
         box(g, 'West enclosure wall', -18, 1.7, 0, 1.15, 3.4, 30, mats.mudbrick, 'wall');
         box(g, 'South enclosure wall', 0, 1.7, 15, 37, 3.4, 1.15, mats.mudbrick, 'wall');
-        box(g, 'East enclosure wall north segment', 0, 1.7, 15, 12, 3.4, 1.15, mats.mudbrick, 'wall');
-        box(g, 'East enclosure wall south segment', 0, 1.7, 15, 12, 3.4, 1.15, mats.mudbrick, 'wall');
+        box(g, 'East enclosure wall north segment', -11.5, 1.7, 15, 13, 3.4, 1.15, mats.mudbrick, 'wall');
+        box(g, 'East enclosure wall south segment', 11.5, 1.7, 15, 13, 3.4, 1.15, mats.mudbrick, 'wall');
         box(g, 'Gate tower west', -3.25, 3.0, 15, 4.0, 5.8, 2.1, mats.mudbrick, 'gate');
         box(g, 'Gate tower east', 3.25, 3.0, 15, 4.0, 5.8, 2.1, mats.mudbrick, 'gate');
         box(g, 'Gate roof bridge', 0, 5.7, 15, 2.5, 0.5, 2.0, mats.mudbrick, 'gate');
@@ -359,7 +359,7 @@ if (mount) {
 
       function cleanWorld() {
         while (world.children.length) {
-          const child = world.children.pop();
+          const child = world.children[world.children.length - 1];
           world.remove(child);
           child.traverse(o => {
             if (o.geometry) o.geometry.dispose();

@@ -56,7 +56,7 @@ The site is organized as **21 numbered chapters** and covers:
 - [The Epigraphic Survey — Medinet Habu, Volume III: Calendar and Minor Records](https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/oip23.pdf)
 - [American Research Center in Egypt — Small Temple of Amun](https://archives.arce.org/collections/small-temple-of-amun)
 - [Jean Li — Elite Theban Women of the Eighth–Sixth Centuries BCE: Identity, Status and Mortuary Practice](https://escholarship.org/uc/item/1gh4d9j2)
-- [User-supplied YouTube video reference](https://youtu.be/6nxm8VXhmws)
+- [Supporting YouTube video reference](https://youtu.be/6nxm8VXhmws)
 - [Museo Egizio — Turin Strike Papyrus](https://collezionepapiri.museoegizio.it/en-GB/document/131)
 
 ## Image credits

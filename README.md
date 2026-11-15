@@ -34,13 +34,14 @@ Then open http://localhost:8000 in a modern browser.
 
 ## Research content
 
-The site covers:
+The site is organized as **21 numbered chapters** and covers:
 - The history of the precinct before, during, and after Ramesses III.
+- An embedded YouTube reference supplied for this project (linked as a visual source; no transcript-derived claims have been added without checking the captions).
 - The architectural sequence from the eastern High Gate through the pylons, courts, column halls, chapels, and sanctuary.
 - The palace, appearance window, magazines, workshops, stables, canal, and landing place.
 - The Year 5, Year 8, and Year 11 military records and a cautious reading of the Sea Peoples' names.
-- Amun worship, mortuary cult, offering calendars, festivals, and royal imagery.
-- The Small Temple of Amun, God's Wives of Amun, later reuse, and the Christian settlement of Djeme.
+- Amun worship, the Re-Harakhty solar complex, the Osiris complex, the innermost chambers, sacred barques, offering calendars, festivals, and royal imagery.
+- The Small Temple of Amun, the funerary chapels of the God's Wives of Amun, their religious and political roles, later reuse, and the Christian settlement of Djeme.
 - Excavation, epigraphic recording, conservation, key terms, and source criticism.
 
 ## Core references
@@ -54,6 +55,8 @@ The site covers:
 - [The Epigraphic Survey — Medinet Habu, Volume II: Later Historical Records of Ramses III](https://isac.uchicago.edu/publications/medinet-habu-volume-ii-later-historical-records)
 - [The Epigraphic Survey — Medinet Habu, Volume III: Calendar and Minor Records](https://isac.uchicago.edu/sites/default/files/uploads/shared/docs/oip23.pdf)
 - [American Research Center in Egypt — Small Temple of Amun](https://archives.arce.org/collections/small-temple-of-amun)
+- [Jean Li — Elite Theban Women of the Eighth–Sixth Centuries BCE: Identity, Status and Mortuary Practice](https://escholarship.org/uc/item/1gh4d9j2)
+- [User-supplied YouTube video reference](https://youtu.be/6nxm8VXhmws)
 - [Museo Egizio — Turin Strike Papyrus](https://collezionepapiri.museoegizio.it/en-GB/document/131)
 
 ## Image credits
